@@ -14,32 +14,62 @@
 </head>
 
 <body>
+  <div class="preloader" id="preloader">
+    <div class="loader">
+      <div class="loader__item bounce-1"></div>
+      <div class="loader__item bounce-2"></div>
+      <div class="loader__item bounce-3"></div>
+    </div>
+  </div>
+
   <main class="main">
     <section class="slider">
       <div class="slider__wrapper">
         <h1 class="hidden">Слайдер</h1>
-        <div class="swiper slider-container">
+        <div class="swiper slider-carousel loading">
           <div class="swiper-wrapper">
-            <div class="swiper-slide slider-item">
+            <div class="swiper-slide slider-carousel__item">
               <img class="swiper-slide__image" src="img/slider/slider-1.png" alt="slider-1" width="960" height="960">
             </div>
             <!-- /.swiper-slide -->
-            <div class="swiper-slide slider-item">
+            <div class="swiper-slide slider-carousel__item">
               <img class="swiper-slide__image" src="img/slider/slider-2.png" alt="slider-2" width="960" height="960">
             </div>
             <!-- /.swiper-slide -->
-            <div class="swiper-slide slider-item">
+            <div class="swiper-slide slider-carousel__item">
               <img class="swiper-slide__image" src="img/slider/slider-3.png" alt="slider-3" width="960" height="960">
             </div>
             <!-- /.swiper-slide -->
-            <div class="swiper-slide slider-item">
+            <div class="swiper-slide slider-carousel__item">
               <img class="swiper-slide__image" src="img/slider/slider-4.png" alt="slider-4" width="960" height="960">
             </div>
             <!-- /.swiper-slide -->
           </div>
           <!-- /.swiper-wrapper -->
         </div>
-        <!-- /.swiper slider-container -->
+        <!-- /.slider-carousel -->
+
+        <div class="swiper slider-fade">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide slider-fade__item">
+              <img class="swiper-lazy" data-src="img/slider/slider-1.png" alt="slider-1" width="450" height="450">
+            </div>
+            <div class="swiper-slide slider-fade__item">
+              <img class="swiper-lazy" data-src="img/slider/slider-2.png" alt="slider-2" width="450" height="450">
+            </div>
+            <div class="swiper-slide slider-fade__item">
+              <img class="swiper-lazy" data-src="img/slider/slider-3.png" alt="slider-3" width="450" height="450">
+            </div>
+            <div class="swiper-slide slider-fade__item">
+              <img class="swiper-lazy" data-src="img/slider/slider-4.png" alt="slider-4" width="450" height="450">
+            </div>
+          </div>
+          <!-- /.swiper-wrapper -->
+          <div class="swiper-button-prev swiper-button-white"></div>
+          <div class="swiper-button-next swiper-button-white"></div>
+        </div>
+        <!-- /.slider-fade -->
+
         <div class="slider__info">
           <a class="slider__info-link" href="#">See product gallery</a>
         </div>
@@ -65,7 +95,13 @@
         </div>
         <!-- /.content__description -->
         <div class="content__image">
-          <img src="img/content-1.png" alt="content-1" width="1920" height="750">
+          <picture>
+            <source media="(min-width: 1550px)" srcset="img/content/content-1-1920.png" type="image/png">
+            <source media="(min-width: 481px) and (max-width: 1549px)" srcset="img/content/content-1-960.png"
+              type="image/png">
+            <source media="(max-width: 480px)" srcset="img/content/content-1-450.png" type="image/png">
+            <img src="img/content/content-1-1920.png" alt="content-1">
+          </picture>
         </div>
         <!-- /.content__image -->
       </div>
@@ -85,7 +121,13 @@
         </div>
         <!-- /.content__description -->
         <div class="content__image">
-          <img src="img/content-2.png" alt="content-1" width="1920" height="750">
+          <picture>
+            <source media="(min-width: 1550px)" srcset="img/content/content-2-1920.png" type="image/png">
+            <source media="(min-width: 481px) and (max-width: 1549px)" srcset="img/content/content-2-960.png"
+              type="image/png">
+            <source media="(max-width: 480px)" srcset="img/content/content-2-450.png" type="image/png">
+            <img src="img/content/content-2-1920.png" alt="content-2">
+          </picture>
         </div>
         <!-- /.content__image -->
       </div>

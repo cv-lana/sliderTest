@@ -4,27 +4,46 @@ import './index.html';
 import './css/style.css';
 // import './sass/style.sass';
 
-const swiper = new Swiper('.swiper', {
+window.addEventListener('load', () => {
+  const preloader = document.getElementById('preloader');
+  preloader.classList.add('preloader-hide');
+  setInterval(() => {
+    preloader.classList.add('preloader-hidden');
+  }, 900);
+});
+
+const sliderCarousel = new Swiper('.slider-carousel', {
   loop: true,
   slidesPerView: 3,
-
+  centeredSlides: true,
+  slideToClickedSlide: true,
   autoplay: {
     delay: 4000,
     disableOnInteraction: false,
   },
-
-  breakpoints: {
-    320: {
-      slidesPerView: 1,
-      slidesPerGroup: 1,
-      spaceBetween: 0,
+  on: {
+    imagesReady: function () {
+      this.el.classList.remove('loading');
     },
-    1050: {
-      slidesPerView: 3,
-      spaceBetween: 30,
-      centeredSlides: true,
-      slideToClickedSlide: true,
-    }
-  },
+  }
 });
 
+const sliderFade = new Swiper('.slider-fade', {
+  loop: true,
+  watchSlidesProgress: true,
+  lazy: {
+    loadPrevNext: true,
+  },
+  effect: 'fade',
+  fadeEffect: {
+    crossFade: true
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  autoplay: {
+    delay: 4000,
+    disableOnInteraction: false,
+  },
+});

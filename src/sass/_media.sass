@@ -19,8 +19,6 @@
   .content
     &__item
       max-width: 1500px
-    &__image
-      width: 960px
 
 @media (max-width: 1250px)
   .content
@@ -29,17 +27,12 @@
 
 @media (max-width: 1049px)
   .slider
+    height: auto
     margin-top: 0
-    &-container
-      width: 600px
-
-  .swiper
-    &-slide
-      transform: scale(1)
-      opacity: 0
-      &-active
-        transform: scale(1)
-        opacity: 1
+    &-carousel
+      display: none
+    &-fade
+      display: block
 
   .content
     &__item
@@ -56,6 +49,15 @@
     &__image
       width: 100%
 
+@media (min-width: 992px)
+  .swiper
+    &:hover
+      .swiper-button-prev,
+      .swiper-button-next
+        transform: translateX(0)
+        opacity: 1
+        visibility: visible
+
 @media (max-width: 768px)
   .content
     &__item
@@ -67,13 +69,14 @@
 @media (max-width: 576px)
   .slider
     margin-bottom: 100px
-    &-container
-      max-width: 500px
-      margin-bottom: 30px
-  .swiper
-    width: 90%
 
 @media (max-width: 480px)
+  .slider
+    margin-bottom: 80px
+    &__wrapper
+      margin: 0 20px
+    &-fade
+      margin-bottom: 0
   .content
     &__item
       padding: 0
